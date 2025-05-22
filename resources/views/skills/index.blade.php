@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-900 leading-tight">
                 {{ __('Skills') }}
             </h2>
-            <a href="{{ route('skills.create') }}" class="glass-button px-4 py-2 rounded-md">
+            <a href="{{ route('skills.create') }}" class="glass-button px-4 py-2 rounded-md bg-violet-600 hover:bg-violet-700 text-white">
                 {{ __('Add Skill') }}
             </a>
         </div>
@@ -17,12 +17,12 @@
                     @foreach($skills as $skill)
                         <div class="glass-card p-6 glass-card-hover">
                             <div class="flex justify-between items-center mb-4">
-                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ $skill->name }}</h3>
-                                <span class="text-gray-700 dark:text-white">{{ $skill->level }}%</span>
+                                <h3 class="text-xl font-semibold text-black dark:text-gray-100">{{ $skill->name }}</h3>
+                                <span class="text-black dark:text-gray-100">{{ $skill->level }}%</span>
                             </div>
                             
                             <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                                <div class="bg-indigo-500 h-2.5 rounded-full" style="width: {{ $skill->level }}%"></div>
+                                <div class="bg-violet-400 h-2.5 rounded-full" style="width: {{ $skill->level }}%"></div>
                             </div>
 
                             <div class="flex justify-between items-center">
@@ -46,7 +46,7 @@
             @else
                 <div class="glass-card p-6 text-center">
                     <p class="text-gray-700 dark:text-gray-300 mb-4">No skills yet. Start by adding your first skill!</p>
-                    <a href="{{ route('skills.create') }}" class="glass-button px-4 py-2 rounded-md inline-block text-gray-900 dark:text-white">
+                    <a href="{{ route('skills.create') }}" class="glass-button px-4 py-2 rounded-md inline-block text-white bg-violet-600 hover:bg-violet-700">
                         {{ __('Add Your First Skill') }}
                     </a>
                 </div>

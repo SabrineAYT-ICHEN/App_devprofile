@@ -1,61 +1,131 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Projet DevProfile
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Ce projet est une application web développée avec Laravel dans le cadre du module "Développement web avancé". Il permet aux utilisateurs authentifiés de créer un profil de développeur, d'ajouter leurs projets et compétences, et de générer un CV au format PDF.
 
-## About Laravel
+## Fonctionnalités
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+*   **Authentification :** Inscription et connexion via Laravel Breeze.
+*   **Profil utilisateur :** Modification du nom, email, titre et bio. Affichage du profil sur une page publique accessible via une URL unique.
+*   **Projets :** Ajout, modification et suppression de projets avec titre, description et lien optionnel.
+*   **Compétences :** Ajout, modification et suppression de compétences avec nom.
+*   **Génération de CV :** Bouton pour générer un CV PDF basé sur les informations du profil, projets et compétences. Le PDF peut être téléchargé.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Contraintes techniques
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Ce projet a été développé en utilisant les technologies suivantes :
 
-## Learning Laravel
+*   **Laravel 11** avec **Breeze** pour l'authentification.
+*   **Tailwind CSS** pour le style.
+*   **Barryvdh/Laravel-DomPDF** pour la génération de PDF.
+*   Base de données **MySQL**.\
+*   Structure **MVC** bien organisée.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Installation
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Suivez ces étapes pour installer et exécuter le projet en local :
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1.  **Clonez le dépôt GitHub :**
+    ```bash
+    git clone <URL_DE_VOTRE_DEPOT>
+    cd nom-du-dossier-de-votre-projet
+    ```
+    "https://github.com/SabrineAYT-ICHEN/DevProfile.git"
 
-## Laravel Sponsors
+2.  **Installez les dépendances PHP avec Composer :**
+    ```bash
+    composer install
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3.  **Installez les dépendances JavaScript avec npm (ou Yarn/pnpm) :**
+    ```bash
+    npm install
+    ```
 
-### Premium Partners
+4.  **Créez le fichier d'environnement :**
+    Copiez le fichier `.env.example` et renommez la copie en `.env`.
+    ```bash
+    cp .env.example .env
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+5.  **Générez la clé d'application :**
+    ```bash
+    php artisan key:generate
+    ```
 
-## Contributing
+6.  **Configurez la base de données dans le fichier `.env` :**
+    Ouvrez le fichier `.env` et remplissez les informations de connexion à votre base de données MySQL.
+    ```dotenv
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=votre_nom_de_base_de_donnees
+    DB_USERNAME=votre_utilisateur_mysql
+    DB_PASSWORD=votre_mot_de_passe_mysql
+    ```
+  
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+7.  **Exécutez les migrations de base de données :**
+    Ceci va créer les tables nécessaires (users, projects, skills, etc.).
+    ```bash
+    php artisan migrate
+    ```
 
-## Code of Conduct
+8.  **Configurez le mailer pour les tests (optionnel mais recommandé) :**
+    Dans votre fichier `.env`, assurez-vous que `MAIL_MAILER` est configuré pour le développement. Pour capturer les emails dans les logs :
+    ```dotenv
+    MAIL_MAILER=log
+    ```
+    Ou si vous utilisez Mailpit localement :
+    ```dotenv
+    MAIL_MAILER=smtp
+    MAIL_HOST=127.0.0.1 # ou mailpit si dans docker
+    MAIL_PORT=1025
+    # ... autres configurations MAIL_ si nécessaires ...
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+9.  **Lancez le serveur de développement et le processus Vite :**
+    Ouvrez deux terminaux. Dans le premier, lancez le serveur PHP :
+    ```bash
+    php artisan serve
+    ```
+    Dans le second terminal, lancez le processus Vite pour compiler les assets (CSS, JS) :
+    ```bash
+    npm run dev
+    ```
 
-## Security Vulnerabilities
+10. **Accédez à l'application :**
+    Votre application devrait maintenant être accessible à l'adresse `http://localhost:8001` (ou l'adresse indiquée par `php artisan serve`).
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Utilisation
 
-## License
+1.  **Inscription :** Créez un nouveau compte utilisateur via la page d'inscription.
+2.  **Connexion :** Connectez-vous avec vos identifiants.
+3.  **Modifier le profil :** Accédez à la page de profil pour renseigner votre titre et votre bio.
+4.  **Gérer les projets et compétences :** Utilisez les sections dédiées pour ajouter, modifier ou supprimer vos projets et compétences.
+5.  **Voir le profil public :** Une URL unique sera disponible pour partager votre profil.
+6.  **Générer le CV :** Un bouton sur votre profil permettra de télécharger votre CV au format PDF.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Problèmes rencontrés et solutions
+
+Au cours du développement de ce projet, j'ai rencontré les problèmes suivants et mis en œuvre les solutions ci-dessous :
+
+### 1. Erreur de connexion à Mailpit ("Hôte inconnu")
+
+*   **Problème :** Lors de l'envoi d'emails via Laravel, une erreur "Hôte inconnu 'mailpit:1025'" survenait.
+*   **Solution :** J'utilisais le nom de service Docker "mailpit" dans mon fichier `.env` alors que mon application PHP ne tournait pas dans un environnement Docker Compose connecté à Mailpit. J'ai corrigé le fichier `.env` pour utiliser l'adresse locale `MAIL_HOST=127.0.0.1` et `MAIL_PORT=1025` et me suis assuré que Mailpit était lancé sur ma machine locale.
+
+### 2. Erreur de validation de l'e-mail en minuscules
+
+*   **Problème :** Le formulaire de réinitialisation de mot de passe refusait les adresses email contenant des majuscules avec le message "The email field must be lowercase".
+*   **Solution :** La validation côté serveur exigeait que l'email soit en minuscules. J'ai corrigé mon entrée en utilisant uniquement des caractères minuscules pour l'adresse email.
+
+
+## Auteurs
+
+*   Sabrine Ayt-ichen 
+*  Alae majatti
+   
+
+
+
+

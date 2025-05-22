@@ -59,19 +59,19 @@
                 <!-- Compétences -->
                 <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow border border-gray-100 dark:border-gray-700 min-h-[180px] flex flex-col">
                     <div class="flex items-center justify-between mb-2">
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">Compétences</h3>
-                        <a href="{{ route('skills.create') }}" class="px-3 py-1 bg-green-600 hover:bg-green-700 rounded-lg text-white text-xs font-medium">Ajouter</a>
+                        <h3 class="text-lg font-bold text-white">Compétences</h3>
+                        <a href="{{ route('skills.create') }}" class="px-3 py-1 bg-violet-600 hover:bg-violet-700 rounded-lg text-white text-xs font-medium">Ajouter</a>
                     </div>
                     @if($skills->count() > 0)
                         <div class="space-y-2">
                             @foreach($skills->sortByDesc('level')->take(3) as $skill)
-                                <div class="bg-green-50 dark:bg-green-900 rounded p-2 flex flex-col border border-green-100 dark:border-green-800">
+                                <div class="bg-violet-50 dark:bg-violet-900 rounded p-2 flex flex-col border border-violet-200 dark:border-violet-800">
                                     <div class="flex justify-between items-center">
-                                        <span class="text-green-900 dark:text-green-200 font-semibold text-sm">{{ $skill->name }}</span>
-                                        <span class="text-green-700 dark:text-green-300 text-xs font-medium">{{ $skill->level }}%</span>
+                                        <span class="text-gray-900 dark:text-gray-100 font-semibold text-sm">{{ $skill->name }}</span>
+                                        <span class="text-gray-900 dark:text-gray-100 text-xs font-medium">{{ $skill->level }}%</span>
                                     </div>
-                                    <div class="w-full bg-green-100 dark:bg-green-800 rounded-full h-1 mt-1">
-                                        <div class="bg-gradient-to-r from-green-400 to-green-600 dark:from-green-500 dark:to-green-300 h-1 rounded-full" style="width: {{ $skill->level }}%"></div>
+                                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-1 mt-1">
+                                        <div class="bg-violet-500 h-1 rounded-full" style="width: {{ $skill->level }}%"></div>
                                     </div>
                                 </div>
                             @endforeach

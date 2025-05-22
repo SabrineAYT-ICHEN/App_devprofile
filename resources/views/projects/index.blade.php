@@ -16,7 +16,7 @@
 
     <div class="py-12 dark:bg-[#161e2e]">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            @if (session('success'))
+{{--             @if (session('success'))
                 <div class="mb-6 p-4 bg-green-50 dark:bg-green-900/50 rounded-xl border border-green-200 dark:border-green-800">
                     <p class="text-green-800 dark:text-green-200 flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 dark:text-green-400" viewBox="0 0 20 20" fill="currentColor">
@@ -25,7 +25,7 @@
                         {{ session('success') }}
                     </p>
                 </div>
-            @endif
+            @endif --}}
 
             @if($projects->count() > 0)
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -42,17 +42,18 @@
             font-size: 18px;
             font-weight: bold;
             color: #4F46E5; /* Indigo color */
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .about-me p {
             text-align: justify;
+            margin-bottom: 20px;
         }
         .projects-list, .skills-list {
-            margin-top: 10px;
+            margin-top: 15px;
         }
         .project-item {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
             border-bottom: 1px dashed #ccc;
         }
         .project-item:last-child {
@@ -63,6 +64,7 @@
             font-weight: bold;
             font-size: 14px;
             color: #333;
+            margin-bottom: 8px;
         }
         .project-link {
             font-size: 10px;
@@ -72,16 +74,16 @@
         .project-desc {
             font-size: 12px;
             color: #555;
-            margin-top: 5px;
+            margin-top: 10px;
         }
         .skill-item {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         .skill-name {
             font-weight: bold;
             font-size: 14px;
             color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
         .skill-level-bar {
             height: 8px;
@@ -114,14 +116,14 @@
         .left-column {
             float: left;
             width: 48%;
-            padding-right: 30px;
-            border-right: 1px solid #ccc;
+            padding-right: 20px;
+            border-right: 1px solid #ddd; /* Soft vertical line */
             box-sizing: border-box; /* Include padding and border in element's total width */
         }
         .right-column {
             float: right;
             width: 48%;
-            padding-left: 30px;
+            padding-left: 20px;
             box-sizing: border-box; /* Include padding and border in element's total width */
         }
         /* Handle case where one column might be missing */

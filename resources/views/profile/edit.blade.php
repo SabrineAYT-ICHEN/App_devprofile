@@ -83,7 +83,7 @@
                         </div>
                         <div class="flex items-center gap-2 mt-2">
                             <button type="submit" class="inline-flex items-center px-3 py-1 bg-indigo-600 dark:bg-indigo-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 dark:hover:bg-indigo-800 focus:outline-none focus:border-indigo-700 focus:ring focus:ring-indigo-200 active:bg-indigo-700 disabled:opacity-25 transition">Change</button>
-                        </div>
+            </div>
                     </form>
                 </div>
 
@@ -103,7 +103,7 @@
                         <p class="text-gray-700 dark:text-gray-300 text-xs">Once your account is deleted, all of its resources and data will be permanently deleted. Please be certain.</p>
                         <div class="flex items-center gap-2 mt-2">
                             <button type="submit" class="inline-flex items-center px-3 py-1 bg-red-600 dark:bg-red-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 dark:hover:bg-red-800 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-700 disabled:opacity-25 transition">Delete</button>
-                        </div>
+            </div>
                     </form>
                 </div>
             </div>
