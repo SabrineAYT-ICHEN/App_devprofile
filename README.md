@@ -123,7 +123,7 @@ Au cours du développement de ce projet, j'ai rencontré les problèmes suivants
 ## Auteurs
 
 *   Sabrine Ayt-ichen 
-*  Alae majatti
+*  Alae Majjati
    
 
 
